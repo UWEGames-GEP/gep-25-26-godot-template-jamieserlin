@@ -36,3 +36,14 @@ func get_placed(pos: Vector2i) -> void:
 	z_index = 0
 	anchor_point = global_position - size / 2
 	remove_from_group("held_item")
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_RIGHT && event.is_pressed():
+			if is_picked:
+				do_rotation()
+func do_rotation() -> void:
+	data.is_rotated = !data.is_rotated
+	data.dimensions = Vector2i(data.dimensions.y, data.dimensions.x)
+	var tween = create_tween()
+	tween.tween_property(self, "rotation_degrees", -90 if data.is_rotated else 0, 0.3)
