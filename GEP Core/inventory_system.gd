@@ -3,7 +3,6 @@ extends Node
 @onready var inventory_scene: Control = %InventoryScene
 @onready var player: Node = %Player
 @export var inventory_open: bool = false
-
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 

@@ -7,7 +7,7 @@ const SLOT_SIZE: int = 16
 var slot_data: Array[Node] = []
 
 var held_item_intersects: bool = false
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
 	create_slots()
 	init_slot_data()

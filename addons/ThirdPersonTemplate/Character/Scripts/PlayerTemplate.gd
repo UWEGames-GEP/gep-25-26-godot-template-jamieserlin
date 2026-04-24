@@ -1,5 +1,6 @@
 extends CharacterBody3D
 
+@onready var inventory_system = %InventorySystem
 # Grabs the prebuilt AnimationTree 
 @onready var PlayerAnimationTree = $AnimationTree.get_path()
 @onready var animation_tree = get_node(PlayerAnimationTree)
@@ -43,8 +44,13 @@ var movement_speed = int()
 var angular_acceleration = int()
 var acceleration = int()
 
+func add_item_to_inventory(item_data: ItemData ) -> void:
+	inventory_system.inventory_scene.inventory.add_item(item_data)
+
 func _ready(): # Camera based Rotation
 	direction = Vector3.BACK.rotated(Vector3.UP, $Camroot/h.global_transform.basis.get_euler().y)
+	add_to_group("player") # i added this for collisions
+	
 
 func _input(event): # All major mouse and button input events
 	if event is InputEventMouseMotion:

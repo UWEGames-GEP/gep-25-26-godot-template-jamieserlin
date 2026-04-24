@@ -17,6 +17,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Inventory" type="PanelContainer" parent="." node_paths=PackedStringArray("item_grid")]
+unique_name_in_owner = true
 layout_mode = 2
 offset_left = 36.0
 offset_top = 26.0
