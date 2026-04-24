@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://56lcxm26hg3e" path="res://Inventory/inventory_item.tscn" id="2_fifk2"]
 [ext_resource type="PackedScene" uid="uid://c7svk2bsci4mt" path="res://Inventory/inventory_slot.tscn" id="2_lyanb"]
 [ext_resource type="Resource" uid="uid://cwpkwudout3na" path="res://Inventory/resources/smiley.tres" id="3_ig6iq"]
-[ext_resource type="Resource" uid="uid://by62q8b1xsh4p" path="res://Inventory/resources/speaker.tres" id="4_ig6iq"]
+[ext_resource type="Resource" uid="uid://by62q8b1xsh4p" path="res://Inventory/resources/m4.tres" id="4_ig6iq"]
 
 [node name="InventoryScene" type="Control"]
 layout_mode = 3
@@ -17,9 +17,11 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Inventory" type="PanelContainer" parent="." node_paths=PackedStringArray("item_grid")]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 2
+offset_left = 36.0
+offset_top = 26.0
+offset_right = 1102.0
+offset_bottom = 609.0
 script = ExtResource("1_v3tid")
 items = Array[ExtResource("2_cpf2u")]([ExtResource("3_ig6iq"), ExtResource("4_ig6iq")])
 inventory_item_scene = ExtResource("2_fifk2")

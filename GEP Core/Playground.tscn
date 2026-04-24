@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ngecyo0pmaed"]
+[gd_scene load_steps=14 format=3 uid="uid://ngecyo0pmaed"]
 
 [ext_resource type="Sky" uid="uid://cbbdl23q60wak" path="res://addons/ThirdPersonTemplate/Environments/SkyBox.res" id="1_rfwro"]
 [ext_resource type="Material" uid="uid://c1u020xb37y6n" path="res://addons/ThirdPersonTemplate/Environments/Materials/Blue.material" id="2_wyl2q"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://c75s2m6eic1vo" path="res://addons/ThirdPersonTemplate/Character/Nodes/PlayerTemplate.tscn" id="8_0iswe"]
 [ext_resource type="Script" uid="uid://dgpersm7sku65" path="res://GEP Core/inventory_system.gd" id="9_wyl2q"]
 [ext_resource type="PackedScene" uid="uid://c6wd0phl8e6lm" path="res://Inventory/InventoryScene.tscn" id="10_dtxi8"]
+[ext_resource type="PackedScene" uid="uid://5bddd5fjokg6" path="res://pickup.tscn" id="11_iywyu"]
+[ext_resource type="Resource" uid="uid://by62q8b1xsh4p" path="res://Inventory/resources/m4.tres" id="12_sc53d"]
 
 [sub_resource type="Environment" id="Environment_qyvd4"]
 background_mode = 2
@@ -128,3 +130,7 @@ script = ExtResource("9_wyl2q")
 [node name="InventoryScene" parent="Player/InventorySystem" instance=ExtResource("10_dtxi8")]
 unique_name_in_owner = true
 visible = false
+
+[node name="Pickup" parent="." instance=ExtResource("11_iywyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.157173, 1.19482, -15.3698)
+item_data = ExtResource("12_sc53d")
