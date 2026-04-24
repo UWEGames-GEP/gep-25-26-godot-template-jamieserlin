@@ -1,0 +1,34 @@
+[gd_scene load_steps=8 format=3 uid="uid://c6wd0phl8e6lm"]
+
+[ext_resource type="Script" uid="uid://i6txrom7eeh" path="res://Inventory/scripts/item_grid.gd" id="1_3xrab"]
+[ext_resource type="Script" uid="uid://bhl7agmn12ay8" path="res://Inventory/scripts/inventory.gd" id="1_v3tid"]
+[ext_resource type="Script" uid="uid://mjlnvdj8sgd5" path="res://Inventory/resources/item_data.gd" id="2_cpf2u"]
+[ext_resource type="PackedScene" uid="uid://56lcxm26hg3e" path="res://Inventory/inventory_item.tscn" id="2_fifk2"]
+[ext_resource type="PackedScene" uid="uid://c7svk2bsci4mt" path="res://Inventory/inventory_slot.tscn" id="2_lyanb"]
+[ext_resource type="Resource" uid="uid://cwpkwudout3na" path="res://Inventory/resources/smiley.tres" id="3_ig6iq"]
+[ext_resource type="Resource" uid="uid://by62q8b1xsh4p" path="res://Inventory/resources/speaker.tres" id="4_ig6iq"]
+
+[node name="InventoryScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Inventory" type="PanelContainer" parent="." node_paths=PackedStringArray("item_grid")]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_v3tid")
+items = Array[ExtResource("2_cpf2u")]([ExtResource("3_ig6iq"), ExtResource("4_ig6iq")])
+inventory_item_scene = ExtResource("2_fifk2")
+item_grid = NodePath("ItemGrid")
+
+[node name="ItemGrid" type="GridContainer" parent="Inventory"]
+layout_mode = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+script = ExtResource("1_3xrab")
+inventory_slot_scene = ExtResource("2_lyanb")
+dimensions = Vector2i(4, 4)

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://cwpkwudout3na"]
+
+[ext_resource type="Script" uid="uid://mjlnvdj8sgd5" path="res://Inventory/resources/item_data.gd" id="1_dmbjg"]
+[ext_resource type="Texture2D" uid="uid://dw7n2u5f7gspy" path="res://Inventory/assets/separated-items/itchio-pxl-retro-computer-icons-set-110-item97.png" id="2_qq6ye"]
+
+[resource]
+script = ExtResource("1_dmbjg")
+name = "Smiley"
+texture = ExtResource("2_qq6ye")
+dimensions = Vector2i(2, 2)
+metadata/_custom_type_script = "uid://mjlnvdj8sgd5"
