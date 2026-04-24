@@ -127,3 +127,4 @@ script = ExtResource("9_wyl2q")
 
 [node name="InventoryScene" parent="Player/InventorySystem" instance=ExtResource("10_dtxi8")]
 unique_name_in_owner = true
+visible = false
