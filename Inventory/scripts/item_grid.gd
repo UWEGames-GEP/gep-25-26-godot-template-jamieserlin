@@ -21,9 +21,45 @@ func create_slots() -> void:
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT && event.is_pressed():
-			var index = get_slot_index_from_coords(get_global_mouse_position())
-			print(index, get_coords_from_slot_index(index))
-	
+			var held_item = get_tree().get_first_node_in_group("held_item")
+			if !held_item: 
+				var index = get_slot_index_from_coords(get_global_mouse_position())
+				var slot_index = get_slot_index_from_coords(get_global_mouse_position())
+				var item = slot_data[slot_index]
+				if !item: return
+				item.get_picked_up()
+				remove_item_from_slot_data(item)
+			else:
+				var index = get_slot_index_from_coords(held_item.anchor_point)
+				var items = items_in_area(index, held_item.data.dimensions)
+				if items.size():
+					return
+				held_item.get_placed(get_coords_from_slot_index(index))
+				add_item_to_slot_data(index, held_item)
+
+func remove_item_from_slot_data(item: Node) -> void:
+	for i in slot_data.size():
+		if slot_data[i] == item:
+			slot_data[i] = null
+
+func add_item_to_slot_data(index: int, item: Node) -> void:
+	for y in item.data.dimensions.y:
+		for x in item.data.dimensions.x:
+			slot_data[index + x + y * columns] = item
+			
+
+func items_in_area(index: int, item_dimensions: Vector2i) -> Array:
+	var items: Dictionary = {}
+	for y in item_dimensions.y:
+		for x in item_dimensions.x:
+			var slot_index = index + x + y * columns
+			var item = slot_data[slot_index]
+			if !item: 
+				continue
+			if !items.has(item):
+				items[item] = true
+	return items.keys() if items.size() else[]
+
 func init_slot_data() -> void:
 	slot_data.resize(dimensions.x * dimensions.y)
 	slot_data.fill(null)
