@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ngecyo0pmaed"]
+[gd_scene load_steps=14 format=3 uid="uid://ngecyo0pmaed"]
 
 [ext_resource type="Sky" uid="uid://cbbdl23q60wak" path="res://addons/ThirdPersonTemplate/Environments/SkyBox.res" id="1_rfwro"]
 [ext_resource type="Material" uid="uid://c1u020xb37y6n" path="res://addons/ThirdPersonTemplate/Environments/Materials/Blue.material" id="2_wyl2q"]
@@ -10,9 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://c75s2m6eic1vo" path="res://addons/ThirdPersonTemplate/Character/Nodes/PlayerTemplate.tscn" id="8_0iswe"]
 [ext_resource type="Script" uid="uid://dgpersm7sku65" path="res://GEP Core/inventory_system.gd" id="9_wyl2q"]
 [ext_resource type="PackedScene" uid="uid://c6wd0phl8e6lm" path="res://Inventory/InventoryScene.tscn" id="10_dtxi8"]
-[ext_resource type="PackedScene" uid="uid://5bddd5fjokg6" path="res://pickup.tscn" id="11_iywyu"]
+[ext_resource type="PackedScene" uid="uid://5bddd5fjokg6" path="res://pickup_m4.tscn" id="11_iywyu"]
 [ext_resource type="Script" uid="uid://dt8vbuicgcgnj" path="res://Inventory/inventory_scene.gd" id="11_vn1us"]
-[ext_resource type="Resource" uid="uid://by62q8b1xsh4p" path="res://Inventory/resources/m4.tres" id="12_sc53d"]
 
 [sub_resource type="Environment" id="Environment_qyvd4"]
 background_mode = 2
@@ -24,7 +23,6 @@ adjustment_enabled = true
 adjustment_saturation = 1.15
 
 [node name="Scene" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0815773, -1.43051e-06, 0.163605)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.892271, -0.274443, 0.358516, 2.02684e-08, 0.794054, 0.607847, -0.451501, 0.542364, -0.708511, 0, 2.76815, 9.26053)
@@ -123,11 +121,6 @@ material = ExtResource("7_x40f1")
 [node name="Player" parent="." instance=ExtResource("8_0iswe")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -19.8399)
-gravity = 9.8
-jump_force = 9
-walk_speed = 2.3
-run_speed = 5.5
-dash_power = 12
 
 [node name="InventorySystem" type="Node" parent="Player"]
 unique_name_in_owner = true
@@ -140,4 +133,3 @@ script = ExtResource("11_vn1us")
 
 [node name="Pickup" parent="." instance=ExtResource("11_iywyu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.157173, 1.20797, -15.3698)
-item_data = ExtResource("12_sc53d")
