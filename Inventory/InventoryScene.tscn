@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://bhl7agmn12ay8" path="res://Inventory/scripts/inventory.gd" id="1_v3tid"]
 [ext_resource type="PackedScene" uid="uid://56lcxm26hg3e" path="res://Inventory/inventory_item.tscn" id="2_fifk2"]
 [ext_resource type="PackedScene" uid="uid://c7svk2bsci4mt" path="res://Inventory/inventory_slot.tscn" id="2_lyanb"]
-[ext_resource type="PackedScene" uid="uid://wsb0javp2trn" path="res://pickup.tscn" id="6_cpf2u"]
+[ext_resource type="PackedScene" uid="uid://wsb0javp2trn" path="res://Inventory/pickups/pickup.tscn" id="6_cpf2u"]
 
 [node name="InventoryScene" type="Control"]
 layout_mode = 3

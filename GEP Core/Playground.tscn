@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ngecyo0pmaed"]
+[gd_scene load_steps=15 format=3 uid="uid://ngecyo0pmaed"]
 
 [ext_resource type="Sky" uid="uid://cbbdl23q60wak" path="res://addons/ThirdPersonTemplate/Environments/SkyBox.res" id="1_rfwro"]
 [ext_resource type="Material" uid="uid://c1u020xb37y6n" path="res://addons/ThirdPersonTemplate/Environments/Materials/Blue.material" id="2_wyl2q"]
@@ -10,8 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://c75s2m6eic1vo" path="res://addons/ThirdPersonTemplate/Character/Nodes/PlayerTemplate.tscn" id="8_0iswe"]
 [ext_resource type="Script" uid="uid://dgpersm7sku65" path="res://GEP Core/inventory_system.gd" id="9_wyl2q"]
 [ext_resource type="PackedScene" uid="uid://c6wd0phl8e6lm" path="res://Inventory/InventoryScene.tscn" id="10_dtxi8"]
-[ext_resource type="PackedScene" uid="uid://5bddd5fjokg6" path="res://pickup_m4.tscn" id="11_iywyu"]
+[ext_resource type="PackedScene" uid="uid://cpoojkeqrnsgk" path="res://Inventory/pickups/pickup_m4.tscn" id="11_iywyu"]
 [ext_resource type="Script" uid="uid://dt8vbuicgcgnj" path="res://Inventory/inventory_scene.gd" id="11_vn1us"]
+[ext_resource type="PackedScene" uid="uid://1v8f0ga8w4tn" path="res://Inventory/pickups/pickup_smiley.tscn" id="13_vn1us"]
 
 [sub_resource type="Environment" id="Environment_qyvd4"]
 background_mode = 2
@@ -132,4 +133,7 @@ visible = false
 script = ExtResource("11_vn1us")
 
 [node name="Pickup" parent="." instance=ExtResource("11_iywyu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.157173, 1.20797, -15.3698)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.438883, 0.679106, -13.4323)
+
+[node name="Pickup2" parent="." instance=ExtResource("13_vn1us")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.44187, 0.687244, -17.1433)

@@ -17,13 +17,16 @@ func drop_held_item() -> void:
 		print("Player not found")
 		return
 
-	var pickup_instance = pickup_scene.instantiate()
 
+	var pickup_instance = pickup_scene.instantiate()
+	print("DUPLICATED DATA:", held_item.data.duplicate(true))
+	pickup_instance.set_item_data(held_item.data)
 	get_tree().current_scene.add_child(pickup_instance)
 
-	pickup_instance.set_item_data(held_item.data)
-
-	var drop_position = player.global_transform.origin + Vector3(0, 10, 0)
+	var player_pos = player.global_position
+	var drop_position = player_pos + Vector3(0, 0.5, 2)	
+	#^infront of the player by 1.5m
+	
 	pickup_instance.global_transform.origin = drop_position
 
 	# remove from inventory
