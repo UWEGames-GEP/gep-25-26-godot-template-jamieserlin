@@ -122,6 +122,11 @@ material = ExtResource("7_x40f1")
 [node name="Player" parent="." instance=ExtResource("8_0iswe")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -19.8399)
+gravity = null
+jump_force = null
+walk_speed = null
+run_speed = null
+dash_power = null
 
 [node name="InventorySystem" type="Node" parent="Player"]
 unique_name_in_owner = true
