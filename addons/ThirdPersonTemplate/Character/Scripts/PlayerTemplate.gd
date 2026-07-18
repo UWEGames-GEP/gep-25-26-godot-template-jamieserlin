@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-# @onready var inventory_system = %InventorySystem
+@onready var inventory_system = %InventorySystem
 # Grabs the prebuilt AnimationTree 
 @onready var PlayerAnimationTree = $AnimationTree.get_path()
 @onready var animation_tree = get_node(PlayerAnimationTree)

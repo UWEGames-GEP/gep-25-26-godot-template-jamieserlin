@@ -11,6 +11,8 @@ var held_item_intersects: bool = false
 func _ready() -> void:
 	create_slots()
 	init_slot_data()
+	await get_tree().process_frame
+	await get_tree().process_frame
 
 
 func create_slots() -> void:

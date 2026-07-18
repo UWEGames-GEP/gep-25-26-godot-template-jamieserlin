@@ -18,23 +18,19 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if is_picked:
 		global_position = get_global_mouse_position()
-		
-	
+
 func set_init_position(pos: Vector2) -> void:
 	global_position = pos + size / 2
-	anchor_point = global_position - size / 2
 
 func get_picked_up() -> void:
 	add_to_group("held_item")
 	is_picked = true
 	z_index = 10
-	anchor_point = global_position - size / 2
 
 func get_placed(pos: Vector2i) -> void:
 	is_picked = false
 	global_position = pos + Vector2i(size / 2)
 	z_index = 0
-	anchor_point = global_position - size / 2
 	remove_from_group("held_item")
 
 func _input(event: InputEvent) -> void:
@@ -42,6 +38,7 @@ func _input(event: InputEvent) -> void:
 		if event.button_index == MOUSE_BUTTON_RIGHT && event.is_pressed():
 			if is_picked:
 				do_rotation()
+
 func do_rotation() -> void:
 	data.is_rotated = !data.is_rotated
 	data.dimensions = Vector2i(data.dimensions.y, data.dimensions.x)
